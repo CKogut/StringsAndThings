@@ -40,10 +40,10 @@ public class StringsAndThings {
      *           removeString("Hello there", "e") //  Should return "Hllo thr"
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
-
-
     public String removeString(String base, String remove){
-        return null;
+        String str = base;
+        str =  str.replace(remove, "");
+        return str;
     }
 
     /**
