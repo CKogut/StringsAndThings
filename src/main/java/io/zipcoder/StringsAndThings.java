@@ -15,7 +15,20 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
+        //Break string into array of words
+        String[] str = input.split(" ");
+        int count = 0;
+
+        // Go through array
+        // Does the word end in y or z
+        // If so count++
+        for (int i = 0; i < str.length; i++){
+            String word = str[i];
+            if (word.endsWith("y") || word.endsWith("z")){
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -27,6 +40,8 @@ public class StringsAndThings {
      *           removeString("Hello there", "e") //  Should return "Hllo thr"
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
+
+
     public String removeString(String base, String remove){
         return null;
     }
