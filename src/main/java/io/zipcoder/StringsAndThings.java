@@ -86,6 +86,8 @@ public class StringsAndThings {
      *           gHappy("xxgxx") // Should return  false
      *           gHappy("xxggyygxx") // Should return  false
      */
+    // Third test checks for true, documentation above states false. My interpretation of the doc is that 'xxggyygxx'
+    // should be 'false' as the last 'g' does not have an adjacent 'g'.
     public Boolean gIsHappy(String input){
         String str = input;
         int numberOfG = 0;
@@ -95,9 +97,6 @@ public class StringsAndThings {
             if (str.charAt(i)== 'g') {
                 numberOfG++;
             }
-        }
-
-        for (int i = 0; i < str.length()-1; i++) {
             if (str.charAt(i)== 'g' && (str.charAt(i-1) == 'g' || str.charAt(i+1) == 'g')) {
                 happyGs++;
             }
@@ -105,7 +104,7 @@ public class StringsAndThings {
 
         //logger.info(String.valueOf(numberOfG));
         //logger.info(String.valueOf(happyGs));
-        logger.info(String.valueOf(numberOfG == happyGs));
+        //logger.info(String.valueOf(numberOfG == happyGs));
 
         return numberOfG == happyGs;
     }
@@ -119,6 +118,19 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        String str = input;
+        int tripleLetter = 0;
+
+        for (int i = 0; i < str.length()-2; i++){
+            char letter = str.charAt(i);
+            if (str.charAt(i+1)== letter && str.charAt(i+2) == letter){
+                tripleLetter++;
+            }
+        }
+
+        return tripleLetter;
     }
+
+
+
 }
