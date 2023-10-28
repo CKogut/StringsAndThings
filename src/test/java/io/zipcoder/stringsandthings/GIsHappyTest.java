@@ -30,6 +30,7 @@ public class GIsHappyTest {
         Assert.assertFalse(actual);
     }
 
+    // According to the documentation this test should assert false?
     @Test
     public void gIsHappyTest3(){
         Boolean actual = stringsAndThings.gIsHappy("xxggyygxx");

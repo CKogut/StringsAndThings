@@ -1,4 +1,5 @@
 package io.zipcoder;
+import java.util.logging.Logger;
 
 
 /**
@@ -6,6 +7,7 @@ package io.zipcoder;
  */
 public class StringsAndThings {
 
+    private final static Logger logger = Logger.getLogger(StringsAndThings.class.getName());
     /**
      * Given a string, count the number of words ending in 'y' or 'z' -- so the 'y' in "heavy" and the 'z' in "fez" count,
      * but not the 'y' in "yellow" (not case sensitive). We'll say that a y or z is at the end of a word if there is not an alphabetic
@@ -85,7 +87,27 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        String str = input;
+        int numberOfG = 0;
+        int happyGs = 0;
+
+        for (int i = 0; i < str.length()-1; i++) {
+            if (str.charAt(i)== 'g') {
+                numberOfG++;
+            }
+        }
+
+        for (int i = 0; i < str.length()-1; i++) {
+            if (str.charAt(i)== 'g' && (str.charAt(i-1) == 'g' || str.charAt(i+1) == 'g')) {
+                happyGs++;
+            }
+        }
+
+        //logger.info(String.valueOf(numberOfG));
+        //logger.info(String.valueOf(happyGs));
+        logger.info(String.valueOf(numberOfG == happyGs));
+
+        return numberOfG == happyGs;
     }
 
 
