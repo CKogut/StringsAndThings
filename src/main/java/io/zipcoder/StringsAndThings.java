@@ -59,11 +59,17 @@ public class StringsAndThings {
         int countIS = 0;
         int countNOT = 0;
 
-        for (int i = 0; i < str.length(); i++) {
+
+        // Check for 'is'
+        for (int i = 0; i < str.length()-1; i++) {
             if ((str.charAt(i) == 'i') && (str.charAt(i + 1) == 's')) {
                 countIS++;
             }
-            if ((str.charAt(i) == 'n') && (str.charAt(i + 1) == 'o') && (str.charAt(i + 2) == 't')) {
+        }
+
+        // Check for 'not'
+        for (int j = 0; j < str.length()-2; j++) {
+            if ((str.charAt(j) == 'n') && (str.charAt(j + 1) == 'o') && (str.charAt(j + 2) == 't')) {
                 countNOT++;
             }
         }
