@@ -102,10 +102,6 @@ public class StringsAndThings {
             }
         }
 
-        //logger.info(String.valueOf(numberOfG));
-        //logger.info(String.valueOf(happyGs));
-        //logger.info(String.valueOf(numberOfG == happyGs));
-
         return numberOfG == happyGs;
     }
 
